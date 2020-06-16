@@ -1,0 +1,21 @@
+if test $# -eq 3
+then
+if grep "$1" $2>$3
+then
+echo "pattern found."
+echo "The content of the output file is"
+cat $3
+else
+echo "Error message : Pattern not found."
+fi
+else
+echo "Arguments are not correctly passed."
+echo "Usage:<script_filename> <pattern> <input_filename> <output_filename>"
+fi
+
+# 	OUTPUT
+#sh ./2.sh pattern ./2.sh a.txt
+#pattern found.
+#The content of the output file is
+#echo "pattern found."
+#echo "Usage:<script_filename> <pattern> <input_filename> <output_filename>"
