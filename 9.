@@ -1,0 +1,40 @@
+choice="y"
+while [ $choice = "y" ]
+do
+echo -n "\t\t	MENU
+	1. UPPERCASE TO LOWERCASE
+	2. LOWERCASE TO UPPERCASE
+	ENTER YOUR CHOICE ======>"
+read option
+echo -n "Enter source file :"
+read source
+echo -n "Enter Target File :"
+read target
+case $option in
+1) dd if=$source of=$target conv=lcase 2>> /dev/null
+;;
+2) dd if="$source" of="$target" conv=ucase 2>> /dev/null
+;;
+esac
+echo -ne "\nDo you want to continue [y/n]:"
+read choice
+done
+	
+
+#OUTPUT
+#	MENU
+#	1. UPPERCASE TO LOWERCASE
+#	2. LOWERCASE TO UPPERCASE
+#	ENTER YOUR CHOICE ======>1
+#Enter source file :capital.txt
+#Enter Target File :small.txt
+#
+#Do you want to continue [y/n]:y
+#	MENU
+#	1. UPPERCASE TO LOWERCASE
+#	2. LOWERCASE TO UPPERCASE
+#	ENTER YOUR CHOICE ======>2
+#Enter source file :small.txt
+#Enter Target File :capital.txt
+#
+#Do you want to continue [y/n]:n
