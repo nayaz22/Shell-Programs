@@ -1,0 +1,24 @@
+echo -n "Enter the string ===>"
+read str
+instr=$str
+count=`echo $str | wc -c`
+while test $count -gt 0
+do
+ch=`echo $str | cut -c $count`
+count=`expr $count - 1`
+rev=`echo $rev$ch`
+done
+echo -e "\nGIVEN STRING : $instr"
+echo "REVERSE OF THE STRING: $rev"
+if test $instr = $rev
+then
+echo "THE GIVEN STRING IS POLINDROME."
+else
+echo "THE GIVEN STRING IS NOT POLINDROME."
+fi
+
+#Enter the string ===>Hello
+#
+#GIVEN STRING : Hello
+#REVERSE OF THE STRING: olleH
+#THE GIVEN STRING IS NOT POLINDROME.
