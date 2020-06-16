@@ -1,0 +1,51 @@
+while true
+do
+echo -ne "\n\t\t MENU
+1.ENTER SENEANCE
+2.SEARCH WORD
+3.EXIT
+ENTER YOUR CHOICE==>"
+read choice
+case $choice in
+1)echo -ne "\nEnter filename:"
+read fname 
+echo "Enter the sentance and press ^d at end."
+cat > $fname
+;;
+2)echo -ne "Enter the filename :"
+read fname
+echo -n "Enter the word to search :"
+read word
+grep "$word" $fname || echo "Word Not Found."
+;;
+3)exit
+;;
+esac
+done
+
+#	OUTPUT
+#		 MENU
+#1.ENTER SENEANCE
+#2.SEARCH WORD
+#3.EXIT
+#ENTER YOUR CHOICE==>1
+#
+#Enter filename:a.txt
+#Enter the sentance and press ^d at end.
+#this is test page
+#
+#		 MENU
+#1.ENTER SENEANCE
+#2.SEARCH WORD
+#3.EXIT
+#ENTER YOUR CHOICE==>2
+#Enter the filename :a.txt
+#Enter the word to search :test
+#this is test page
+#
+#		 MENU
+#1.ENTER SENEANCE
+#2.SEARCH WORD
+#3.EXIT
+#ENTER YOUR CHOICE==>3
+#studentb@jmc-cs:~/7323/shell/5
