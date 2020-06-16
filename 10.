@@ -1,0 +1,50 @@
+echo -n "Enter the file name :"
+read fname
+choice="y"
+while [ $choice = "y" ]
+do
+echo -ne "\nEnter city ===>"
+read city
+echo -n "\nEnter the State ===>"
+read state
+echo -n "Enter Country ===>"
+read country
+echo "$city $state $country" >> $fname
+echo -ne "\nDo you want to add another record [y/n]?"
+read choice
+done
+echo -e "\nGiven Inputs records are \n"
+cat $fname
+
+sort $fname > sortfile
+echo -e "\n Sorted content is \n"
+cat sortfile
+
+#	OUTPUT
+
+#Enter the file name :input.txt
+#Enter city ===>Trichy
+#Enter the State ===>Tamilnad
+#E#nter Country ===>India
+#
+#Do you want to add another record [y/n]?y
+#
+#Enter city ===>Bangalore
+#Enter the State ===>Karnataka
+#Enter Country ===>India
+#
+#Do you want to add another record [y/n]?n
+#
+#Given Inputs records are 
+#
+#Trichy TamilNadu India
+#Trichy  
+#Trichy Tamilnad India
+#Bangalore Karnataka India
+#
+# Sorted content is 
+#
+#Bangalore Karnataka India
+#Trichy  
+#Trichy Tamilnad India
+#Trichy TamilNadu India
