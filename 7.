@@ -1,0 +1,18 @@
+echo -n "howmany terms ?"
+read n
+factorial=1
+cnt=1
+sum=0
+
+while [ $cnt -le $n ]
+do
+factorial=`expr $factorial \* $cnt`
+sum=`echo -e "scale=6 \n $sum + 1 / $factorial" | bc`
+cnt=`expr $cnt + 1`
+
+done
+echo "THE SUM OF THE GIVEN SERIES IS :$sum"
+
+#	OUTPUT
+#howmany terms ?9
+#THE SUM OF THE GIVEN SERIES IS :1.718277
