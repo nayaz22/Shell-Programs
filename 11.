@@ -1,0 +1,41 @@
+echo -n "Enter name of the first file ===>"
+read file1
+echo -n "Enter name of the second file ===>"
+read file2
+echo -n "Enter name of the third file ===>"
+read file3
+sort -m $file1 $file2 $file3 > mergefile
+echo -e "\nSORTED CONTENT IS \n"
+sort mergefile | more
+echo -e "\nLast 20 File present in the current directory are \n"
+ls | tail -20 | tee profile
+
+
+Enter name of the first file ===>text1.txt
+Enter name of the second file ===>text2.txt
+Enter name of the third file ===>text3.txt
+
+#	OUTPUT
+#SORTED CONTENT IS 
+#
+#a
+#b
+#c
+#i
+#k
+#p
+#q
+#s
+#w
+#x
+#y
+#z
+#
+#Last 20 File present in the current directory are 
+#
+#11.sh
+#mergefile
+#profile
+#text1.txt
+#text2.txt
+#text3.txt
