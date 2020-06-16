@@ -1,0 +1,9 @@
+for file in *
+do
+case $file in
+*.)	mv $file $HOME/c;;
+*.)	mv $file $HOME/c++;;
+*.)	mv $file $HOME/shell;;
+*.)	mv $file $HOME/java;;
+esac
+done
