@@ -1,0 +1,61 @@
+if test $# -eq 0
+then
+echo "specify Source and Destination filename"
+echo "Usage: $0 <SourceFile name> <DestinationFile name>"
+elif test $# -eq 1
+then
+echo "Specify Destination filename"
+echo "usage: $0 <SourceFile name> <DestinationFile name>"
+elif test $# -gt 2
+then
+echo "Argument list is too long"
+echo "usage: $0 <SourceFile name> <DestinationFile name>"
+elif test ! -e $1
+then
+echo "source file not exists"
+elif test -d $dir
+then
+echo "source -$dir is a directory, not a file"
+elif test ! -r $1
+then
+echo "source file is not readable"
+elif test -e $2 -a ! -w $2
+then
+echo "Destination is not writable"
+elif test -f $2
+then
+echo -n "Destination file exists. overwrite [y/n]:"
+read choice
+if test $choice="y"
+then
+cp $1 $2
+fi
+else
+cp $1 $2
+fi
+
+#	OUTPUT
+#chmod +x 12.sh
+#studentb@jmc-cs:~/7323/shell/12$ ./12.sh
+#specify Source and Destination filename
+#Usage: ./12.sh <SourceFile name> <DestinationFile name>
+#studentb@jmc-cs:~/7323/shell/12$ ./12.sh a.txt b.txt
+#Destination file exists. overwrite [y/n]:y
+#studentb@jmc-cs:~/7323/shell/12$ ./12.sh a.txt b.txt c.txt
+#Argument list is too long
+#usage: ./12.sh <SourceFile name> <DestinationFile name>
+#studentb@jmc-cs:~/7323/shell/12$ ./12.sh c.txt a.txt
+#source file is not readable
+#studentb@jmc-cs:~/7323/shell/12$ ./12.sh a.txt c.txt
+#Destination is not writable
+#studentb@jmc-cs:~/7323/shell/12$ gedit ./12.sh
+#studentb@jmc-cs:~/7323/shell/12$ ./12.sh 12 a.txt
+#source - is a directory, not a file
+#studentb@jmc-cs:~/7323/shell/12$ ls -la small*.txt
+#ls: cannot access 'small*.txt': No such file or directory
+#studentb@jmc-cs:~/7323/shell/12$ ls -la a*.txt
+#-rw-rw-r-- 1 studentb studentb 9 Mar  3 09:12 a.txt
+#studentb@jmc-cs:~/7323/shell/12$ ls -la b*.txt
+#-rw-rw-r-- 1 studentb studentb 9 Mar  3 09:44 b.txt
+#studentb@jmc-cs:~/7323/shell/12$ ls -la c*.txt
+#---x--x-wx 1 studentb studentb 9 Mar  3 09:29
