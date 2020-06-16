@@ -1,0 +1,41 @@
+echo -n "Enter the customer number===>"
+read custno
+echo -n "Enter the customer name===>"
+read custname
+echo -n "Previous reading====>"
+read preread
+echo -n "Enter the current reading===>"
+read curread
+units=`expr $curread - $preread`
+if [ $units -le 100 ]
+then
+charge=`echo -e"scale=2 \n $units * 0.75" | bc`
+elif [ $units -le 200 ]
+then
+unitsrem=`expr $units - 100`
+charge=`echo -e "scale=2 \n $unitsrem * 1.50" | bc`
+charge=`echo -e "scale=2 \n $charge + 75.0" | bc`
+elif [ $units -gt 200 ]
+then
+unitsrem=`expr $units - 200`
+charge=`echo -e "scale=2 \n $unitsrem * 3.00" | bc`
+charge=`echo -e "scale=2 \n $charge + 225.00" | bc`
+fi
+echo -e "\nELECTRICITY BILL\n==================\n"
+echo "CUSTOMER NUMBER  :$custno"
+echo "CUSTOMER NAME    :$custname"
+echo "PREVIOUS READING :$preread"
+echo "CURRENT READING  :$curread"
+echo "UNITS CONSUMED   :$units"
+echo "CHARGE           :$charge"
+
+#	OUTPUT
+#ELECTRICITY BILL
+#==================
+#
+#CUSTOMER NUMBER  :12345
+#CUSTOMER NAME    :harry
+#PREVIOUS READING :600
+#CURRENT READING  :900
+#UNITS CONSUMED   :300
+#CHARGE           :525.00
