@@ -1,0 +1,24 @@
+echo -n "Enter the file-name===>"
+read fname
+echo "Enter five names and press ^d at the end."
+cat > fname
+sort $fname > sortfile
+echo -e "\nUNSORTED LIST :"
+cat $fname
+echo -e "\nSORTED LIST :"
+cat sortfile
+
+#	OUTPUT
+#Enter the file-name===>fname
+#Enter five names and press ^d at the end.
+#adnan
+#anees
+#umer
+#UNSORTED LIST :
+#adnan
+#anees
+#umer
+#SORTED LIST :
+#adnan
+#anees
+#umer
