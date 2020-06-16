@@ -1,0 +1,15 @@
+echo "enter your birth year==>"
+read year
+curryear=`date +%Y`
+age=`expr $curryear - $year`
+if test $age -ge 18
+then
+echo "you are eligible for vote"
+else
+echo "you are not eligible for vote"
+fi
+
+#output:
+#enter your birth year==>
+#1998
+#you are eligible for vote
