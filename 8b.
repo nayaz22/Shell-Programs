@@ -1,0 +1,68 @@
+echo -n "Enter Student Name ====>"
+read name
+echo -n "Enter Register No. =====>"
+read rno
+echo -n "Enter Marks in subject 1===>"
+read m1
+echo -n "Enter Marks in subject 2===>"
+read m2
+echo -n "Enter Marks in subject 3===>"
+read m3
+echo -n "Enter Marks in subject 4===>"
+read m4
+if [ $m1 -ge 50 ]
+then
+res1="PASS"
+else
+res1="FAIL"
+fi
+if [ $m2 -ge 50 ]
+then
+res2="PASS"
+else
+res2="FAIL"
+fi
+if [ $m3 -ge 50 ]
+then
+res3="PASS"
+else
+res3="FAIL"
+fi
+if [ $m4 -ge 50 ]
+then
+res4="PASS"
+else
+res4="FAIL"
+fi
+if [ $m1 -ge 50 -a $m2 -ge 50 -a $m3 -ge 50 -a $m4 -ge 50 ]
+then
+result="PASS"
+else
+result="FAIL"
+fi
+echo -e "\n\n\t RESULT \n\t======\n"
+echo "Student Name: $name"
+echo "Register No.: $rno"
+echo "============================="
+echo -e "Subject \t Marks \t Reuslt"
+echo "============================="
+echo -e "C	\t $m1 \t $res1"
+echo -e "C++	\t $m2 \t $res2"
+echo -e "DOS	\t $m3 \t $res3"
+echo -e "LINUX	\t $m4 \t $res4"
+echo "=============================="
+echo -e "\n OVERALL RESULT IS $result"
+
+#	 RESULT 
+#	======
+#
+#Student Name: anees
+#Register No.: 1234
+#=============================
+#Subject 	 Marks 	 Reuslt
+#=============================
+#C		 96 	 PASS
+#C++		 74 	 PASS
+#DOS		 85 	 PASS
+#LINUX		 75 	 PASS
+#==============================
