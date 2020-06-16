@@ -1,0 +1,36 @@
+echo "<<FILE INFORMATION>>"
+echo "Enter the file name"
+read fname
+if test -e $fname
+then
+echo "file is executable"
+else
+echo "file is not executable"
+fi
+if test -r $file
+then
+echo "file is readable"
+else 
+echo "file is not readable"
+fi
+if test -w $file
+then
+echo "file is writable"
+else
+echo "file is not writable"
+fi
+if test -r $file -a -w $file
+then
+echo "file is readable and writable"
+else
+echo "file is not both readable and writable"
+fi
+
+# OUTPUT
+#<<FILE INFORMATION>>
+#Enter the file name
+#pro.txt
+#file is executable
+#file is readable
+#file is writable
+#file is readable and writable
