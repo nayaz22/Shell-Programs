@@ -1,0 +1,68 @@
+choice=y
+while test $choice = y
+do
+echo -ne "\n\t	MENU
+1.copy
+2.edit
+3.rename
+4.delete
+Enter Your Option==>"
+read option
+echo -n "Enter source filename :"
+read source
+case $option in
+1)echo -n "Enter destination filename:"
+read target
+cp $source $target
+;;
+2)vi $source
+;;
+3)echo -n "Enter the name of the file:"
+read target
+mv $source $target
+;;
+4)rm $source
+;;
+esac
+echo -n "Do you want to continue [y/n]===>"
+read choice
+done
+
+#	OUTPUT
+#	MENU	
+#	1.copy
+#	2.edit
+#	3.rename
+#	4.delete
+#	Enter Your Option==>1
+#	Enter source filename :ab.txt
+#	Enter destination filename:cd.txt
+#	Do you want to continue [y/n]===>y
+#
+#		MENU
+#	1.copy
+#	2.edit
+#	3.rename
+#	4.delete
+#	Enter Your Option==>2
+#	Enter source filename :ab.txt
+#	Do you want to continue [y/n]===>y
+#
+#		MENU
+#	1.copy
+#	2.edit
+#	3.rename
+#	4.delete
+#	Enter Your Option==>3
+#	Enter source filename :a.txt
+#	Enter the name of the file:b.txt
+#	Do you want to continue [y/n]===>y
+#
+#		MENU
+#	1.copy
+#	2.edit
+#	3.rename
+#	4.delete
+#	Enter Your Option==>4
+#	Enter source filename :b.txt
+#	Do you want to continue [y/n]===>n
