@@ -1,0 +1,22 @@
+echo -n "Enter the Student name ===>"
+read sname
+echo "Enter four marks one by one."
+read m1
+read m2
+read m3
+read m4
+if [ $m1 -ge 50 -a $m2 -ge 50 -a $m3 -ge 50 -a $m4 -ge 50 ]
+then
+echo "Result : PASS"
+else
+echo "RESULT : FAIL"
+fi
+
+#	OUTPUT
+#Enter the Student name ===>adnan
+#Enter four marks one by one.
+#82
+#90
+#76
+#94
+#Result : PASS
